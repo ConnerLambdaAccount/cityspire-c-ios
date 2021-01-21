@@ -8,42 +8,73 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
 class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     
+    let locationManager = CLLocationManager()
+    let regionInMeters: Double = 10000
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Currently set to San Francisco - change to user location
-        let initialLocation = CLLocation(latitude: 37.773972, longitude: -122.431297)
-        mapView.centerToLocation(initialLocation)
+        checkLocationServices()
+
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
-    */
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            let alert = UIAlertController(title: "Location Permissions Denied", message: "Go to your settings and allow this app to use your location", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true )
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            centerViewOnUserLocation()
+        case .denied:
+            let alert = UIAlertController(title: "Location Permissions Denied", message: "Go to your settings and allow this app to use your location", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            let alert = UIAlertController(title: "Location Permissions Restricted", message: "Your location permissions is currently set to Restricted, talk to your administrator", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            break
+        }
+    }
 
 }
 
-//Region to display correct zoom level
-private extension MKMapView {
-  func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
-    let coordinateRegion = MKCoordinateRegion(
-      center: location.coordinate,
-      latitudinalMeters: regionRadius,
-      longitudinalMeters: regionRadius)
-    setRegion(coordinateRegion, animated: true)
-  }
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
 }

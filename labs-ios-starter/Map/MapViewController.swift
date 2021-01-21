@@ -36,6 +36,8 @@ class MapViewController: UIViewController {
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
+        
+        locationSearchTable.mapView = mapView
 
     }
     

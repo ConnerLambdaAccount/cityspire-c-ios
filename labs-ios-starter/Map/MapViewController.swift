@@ -16,7 +16,13 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Currently set to San Francisco - change to user location
+        let initialLocation = CLLocation(latitude: 37.773972, longitude: -122.431297)
+        mapView.centerToLocation(initialLocation)
     }
+    
+    
     
 
     /*
@@ -29,4 +35,15 @@ class MapViewController: UIViewController {
     }
     */
 
+}
+
+//Region to display correct zoom level
+private extension MKMapView {
+  func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
+    let coordinateRegion = MKCoordinateRegion(
+      center: location.coordinate,
+      latitudinalMeters: regionRadius,
+      longitudinalMeters: regionRadius)
+    setRegion(coordinateRegion, animated: true)
+  }
 }

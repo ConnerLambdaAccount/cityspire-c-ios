@@ -17,11 +17,25 @@ class MapViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
+    var resultSearchController: UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         checkLocationServices()
+        
+        // For the searchController
+        let locationSearchTable = storyboard!.instantiateViewController(identifier: "LocationSearchTable") as! LocationSearchTableViewController
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for location"
+        navigationItem.titleView = resultSearchController?.searchBar
+        
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
 
     }
     

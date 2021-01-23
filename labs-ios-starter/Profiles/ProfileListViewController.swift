@@ -22,7 +22,9 @@ class ProfileListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        refresh()
+        if !profileController.bypass {
+            refresh()
+        }
     }
     
     // MARK: - Private Methods

@@ -34,6 +34,11 @@ class LoginViewController: UIViewController {
         UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
     }
     
+    @IBAction func bypassOktaTapped(_ sender: Any) {
+        profileController.bypass = true
+    }
+    
+    
     // MARK: - Private Methods
     
     private func alertUserOfExpiredCredentials(_ notification: Notification) {

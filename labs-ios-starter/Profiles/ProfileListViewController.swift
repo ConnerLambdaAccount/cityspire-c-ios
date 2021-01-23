@@ -22,7 +22,7 @@ class ProfileListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        if profileController.bypass {
+        if !profileController.bypass {
             refresh()
         }
     }

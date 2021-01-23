@@ -46,6 +46,7 @@
                                 <rect key="frame" x="164" y="832" width="87" height="30"/>
                                 <state key="normal" title="Bypass Okta"/>
                                 <connections>
+                                    <action selector="bypassOktaTapped:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="bE0-8P-D42"/>
                                     <segue destination="aOC-qF-9qB" kind="presentation" modalPresentationStyle="fullScreen" id="g7I-6i-Inq"/>
                                 </connections>
                             </button>

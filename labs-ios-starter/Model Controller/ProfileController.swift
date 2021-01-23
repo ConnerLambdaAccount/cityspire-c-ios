@@ -20,6 +20,8 @@ class ProfileController {
     private(set) var authenticatedUserProfile: Profile?
     private(set) var profiles: [Profile] = []
     
+    var bypass = false
+    
     private let baseURL = URL(string: "https://labs-api-starter.herokuapp.com/")!
     
     private init() {

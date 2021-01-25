@@ -18,10 +18,11 @@ func parseCities() -> [String] {
         
         var city = ""
         for c in fileContents {
-            if c != "\n" { city.append(c) }
             if c == "," || c == "\n" {
                 cities.append(city)
                 city = ""
+            } else {
+                city.append(c)
             }
         }
         return cities

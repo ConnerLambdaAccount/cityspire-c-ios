@@ -22,10 +22,10 @@ class LocationSearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Load cities from csv file (only done once)
         cities = parseCities()
     }
     
+    /*
     //MARK: - Show Address on TableView
     func parseAddress(selectedItem:MKPlacemark) -> String {
         let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
@@ -46,7 +46,7 @@ class LocationSearchTableViewController: UITableViewController {
             selectedItem.administrativeArea ?? ""
         )
         return addressLine
-    }
+    }*/
 
     // MARK: - Table view data source
 
@@ -62,8 +62,7 @@ class LocationSearchTableViewController: UITableViewController {
         let city: String = citySearchResults[indexPath.row]
         let cityName: String = String(city.dropLast(3))
         let state: String = String(city.dropFirst(city.count-2))
-        cell.textLabel?.text = cityName
-        cell.detailTextLabel?.text = state
+        cell.textLabel?.text = "\(cityName), \(state)"
         return cell 
     }
     
@@ -84,7 +83,7 @@ extension LocationSearchTableViewController: UISearchResultsUpdating {
               let searchBarText = searchController.searchBar.text else { return }
         
         let filteredCities = cities.filter { (city) -> Bool in
-            return city.starts(with: searchBarText)
+            return city.lowercased().starts(with: searchBarText.lowercased())
         }
         self.citySearchResults = filteredCities
         self.tableView.reloadData()

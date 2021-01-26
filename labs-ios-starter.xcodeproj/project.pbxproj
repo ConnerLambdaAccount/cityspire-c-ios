@@ -26,7 +26,7 @@
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		7F8DAE8A25BD7229004E04EE /* ParseCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DAE8925BD7229004E04EE /* ParseCities.swift */; };
-		7F8DAE8D25BD739F004E04EE /* cities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7F8DAE8C25BD739F004E04EE /* cities.csv */; };
+		7FCA8DB825BF94BB007D3C05 /* cities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7FCA8DB725BF94BB007D3C05 /* cities.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		7F8DAE8925BD7229004E04EE /* ParseCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseCities.swift; sourceTree = "<group>"; };
-		7F8DAE8C25BD739F004E04EE /* cities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cities.csv; path = ../../../cities.csv; sourceTree = "<group>"; };
+		7FCA8DB725BF94BB007D3C05 /* cities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +121,10 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7FCA8DB725BF94BB007D3C05 /* cities.csv */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
 				46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */,
 				7F8DAE8925BD7229004E04EE /* ParseCities.swift */,
-				7F8DAE8C25BD739F004E04EE /* cities.csv */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 			files = (
 				466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */,
 				466C427D249A8749007D033E /* Assets.xcassets in Resources */,
-				7F8DAE8D25BD739F004E04EE /* cities.csv in Resources */,
+				7FCA8DB825BF94BB007D3C05 /* cities.csv in Resources */,
 				46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */,
 				466C427B249A8748007D033E /* Main.storyboard in Resources */,
 			);

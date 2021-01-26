@@ -27,6 +27,8 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showOverlay()
+        
         checkLocationServices()
         
         // For the searchController (will set in the navigation bar)
@@ -47,6 +49,13 @@ class MapViewController: UIViewController {
         
         locationSearchTable.handleMapSearchDelegate = self
 
+    }
+    
+    @objc func showOverlay() {
+        let slideVC = OverlayView()
+        slideVC.modalPresentationStyle = .custom
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
     }
     
     func setupLocationManager() {
@@ -120,5 +129,11 @@ extension MapViewController: HandleMapSearch {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true )
+    }
+}
+
+extension MapViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

@@ -21,9 +21,6 @@ class OverlayView: UIViewController {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
-        
-//        slideIdicator.roundCorners(.allCorners, radius: 10)
-//        subscribeButton.roundCorners(.allCorners, radius: 10)
     }
     
     override func viewDidLayoutSubviews() {

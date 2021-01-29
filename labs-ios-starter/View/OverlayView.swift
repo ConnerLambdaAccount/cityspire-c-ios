@@ -13,10 +13,17 @@ class OverlayView: UIViewController {
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     
+    @IBOutlet weak var cityLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
+    }
+    
+    func updateView(city: String?) {
+        guard let city = city else { return }
+        cityLabel.text = city
     }
     
     override func viewDidLayoutSubviews() {

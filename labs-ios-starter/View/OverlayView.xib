@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OverlayView" customModule="labs_ios_starter" customModuleProvider="target">
             <connections>
+                <outlet property="cityLabel" destination="uM2-GN-bYC" id="4qW-qr-trM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Atv-TC-LhX"/>
             </connections>
         </placeholder>
@@ -25,8 +26,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-wA-Fce">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtu-Pa-HAo">
-                                    <rect key="frame" x="111.5" y="57.5" width="77.5" height="35"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtu-Pa-HAo">
+                                    <rect key="frame" x="127" y="57.5" width="46.5" height="35"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -43,8 +44,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-fZ-KQ4">
                             <rect key="frame" x="0.0" y="190" width="300" height="150"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73Z-Uy-WkP">
-                                    <rect key="frame" x="111.5" y="57.5" width="77.5" height="35"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73Z-Uy-WkP">
+                                    <rect key="frame" x="127" y="57.5" width="46.5" height="35"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
     var resultSearchController: UISearchController? = nil
     var selectedPin: MKPlacemark? = nil
     let annotation = MKPointAnnotation()
+    let slideVC = OverlayView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,6 @@ class MapViewController: UIViewController {
     }
     
     @objc func showOverlay() {
-        let slideVC = OverlayView()
         slideVC.modalPresentationStyle = .custom
         slideVC.transitioningDelegate = self
         self.present(slideVC, animated: true, completion: nil)
@@ -140,8 +140,10 @@ extension MapViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate {
+    // When user selects the searched city annotation, it calls the showOverlay method
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         showOverlay()
+        slideVC.updateView(city: annotation.title)
         mapView.deselectAnnotation(annotation, animated: true)
     }
 }

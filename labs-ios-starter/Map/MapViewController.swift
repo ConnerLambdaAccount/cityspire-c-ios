@@ -23,11 +23,12 @@ class MapViewController: UIViewController {
     
     var resultSearchController: UISearchController? = nil
     var selectedPin: MKPlacemark? = nil
+    let annotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showOverlay()
+        mapView.delegate = self
         
         checkLocationServices()
         
@@ -117,7 +118,7 @@ extension MapViewController: HandleMapSearch {
         selectedPin = placemark
         // remove  pins
         mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
+        
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
         
@@ -135,5 +136,12 @@ extension MapViewController: HandleMapSearch {
 extension MapViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         PresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        showOverlay()
+        mapView.deselectAnnotation(annotation, animated: true)
     }
 }

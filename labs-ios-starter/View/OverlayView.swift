@@ -13,10 +13,6 @@ class OverlayView: UIViewController {
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     
-//    @IBOutlet weak var slideIdicator: UIView!
-//    @IBOutlet weak var imageView: UIImageView!
-//    @IBOutlet weak var subscribeButton: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))

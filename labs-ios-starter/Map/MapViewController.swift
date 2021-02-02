@@ -64,6 +64,8 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    
+    // Check if location services is enabled, if not, alertcontroller tells user to enable it in settings
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             setupLocationManager()

@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
                                                object: nil,
                                                queue: .main,
                                                using: alertUserOfExpiredCredentials)
-        
     }
     
     // MARK: - Actions

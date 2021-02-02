@@ -23,9 +23,13 @@ class MapViewController: UIViewController {
     
     var resultSearchController: UISearchController? = nil
     var selectedPin: MKPlacemark? = nil
+    let annotation = MKPointAnnotation()
+    let slideVC = OverlayView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
         
         checkLocationServices()
         
@@ -47,6 +51,12 @@ class MapViewController: UIViewController {
         
         locationSearchTable.handleMapSearchDelegate = self
 
+    }
+    
+    @objc func showOverlay() {
+        slideVC.modalPresentationStyle = .custom
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
     }
     
     func setupLocationManager() {
@@ -110,7 +120,7 @@ extension MapViewController: HandleMapSearch {
         selectedPin = placemark
         // remove  pins
         mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
+        
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
         
@@ -122,5 +132,20 @@ extension MapViewController: HandleMapSearch {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true )
+    }
+}
+
+extension MapViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    // When user selects the searched city annotation, it calls the showOverlay method
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        showOverlay()
+        slideVC.updateView(city: annotation.title)
+        mapView.deselectAnnotation(annotation, animated: true)
     }
 }

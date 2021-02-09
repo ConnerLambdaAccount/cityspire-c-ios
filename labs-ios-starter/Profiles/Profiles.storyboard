@@ -290,7 +290,7 @@
         <!--CitySpire-->
         <scene sceneID="Jvy-zq-npO">
             <objects>
-                <viewController id="aBR-Hl-bbE" sceneMemberID="viewController">
+                <viewController id="aBR-Hl-bbE" customClass="CitiesViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GZg-z2-F0g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,7 +309,7 @@
                                     <inset key="sectionInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0L7-Zz-P7A">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cityCell" id="0L7-Zz-P7A" customClass="CityCollectionViewCell" customModule="labs_ios_starter" customModuleProvider="target">
                                         <rect key="frame" x="12" y="0.0" width="190" height="233"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gec-2T-6UR">
@@ -336,6 +336,11 @@
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="CityStateLabel" destination="2Ux-Ms-IOl" id="RGc-DT-bFI"/>
+                                            <outlet property="cityImageView" destination="CgB-u1-Yxh" id="2mp-Qq-zXz"/>
+                                            <outlet property="populationLabel" destination="6YM-7Z-ObJ" id="zNE-DY-HIy"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a1u-E4-gHB">
                                         <rect key="frame" x="212" y="0.0" width="190" height="233"/>
@@ -405,6 +410,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CitySpire" id="Ijn-cS-tkh"/>
+                    <connections>
+                        <outlet property="citiesCollectionView" destination="6rQ-EO-8On" id="axZ-ae-Nh8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPF-Lh-hwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,22 +9,20 @@
 import UIKit
 
 class CitiesViewController: UIViewController {
-
+    @IBOutlet var citiesCollectionView: UICollectionView!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        citiesCollectionView.dataSource = self
+        citiesCollectionView.delegate = self
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath)
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
 }

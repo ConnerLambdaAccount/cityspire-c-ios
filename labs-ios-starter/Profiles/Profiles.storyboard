@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -286,21 +287,128 @@
             </objects>
             <point key="canvasLocation" x="1060.8695652173915" y="193.52678571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--CitySpire-->
         <scene sceneID="Jvy-zq-npO">
             <objects>
                 <viewController id="aBR-Hl-bbE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GZg-z2-F0g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search for a city..." translatesAutoresizingMaskIntoConstraints="NO" id="MxS-3y-f7j">
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6rQ-EO-8On">
+                                <rect key="frame" x="0.0" y="234" width="414" height="579"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="181-af-nhE">
+                                    <size key="itemSize" width="190" height="233"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0L7-Zz-P7A">
+                                        <rect key="frame" x="12" y="0.0" width="190" height="233"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gec-2T-6UR">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgB-u1-Yxh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="170"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chicago, IL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-Ms-IOl">
+                                                    <rect key="frame" x="8" y="178" width="88" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Population: 2.7M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YM-7Z-ObJ">
+                                                    <rect key="frame" x="8" y="202" width="119" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a1u-E4-gHB">
+                                        <rect key="frame" x="212" y="0.0" width="190" height="233"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pxS-sL-pSZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5o9-C4-kUS">
+                                        <rect key="frame" x="12" y="243" width="190" height="233"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Ey-4M-wJz">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Cq-20-3MZ">
+                                        <rect key="frame" x="212" y="243" width="190" height="233"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="awn-Ee-He0">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jy1-RU-Tki">
+                                        <rect key="frame" x="12" y="486" width="190" height="233"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BCP-ij-SOe">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NBA-NB-mj5">
+                                        <rect key="frame" x="212" y="486" width="190" height="233"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Ls-Bc-vnU">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Cities Near You:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeh-Cv-2AA">
+                                <rect key="frame" x="20" y="196" width="374" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="WnM-zO-6uS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="C7n-lA-Vj6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MxS-3y-f7j" firstAttribute="top" secondItem="C7n-lA-Vj6" secondAttribute="top" id="0aI-di-NfC"/>
+                            <constraint firstItem="6rQ-EO-8On" firstAttribute="trailing" secondItem="C7n-lA-Vj6" secondAttribute="trailing" id="8aA-xY-BNi"/>
+                            <constraint firstItem="6rQ-EO-8On" firstAttribute="top" secondItem="Aeh-Cv-2AA" secondAttribute="bottom" constant="1" id="92r-Za-qJD"/>
+                            <constraint firstItem="Aeh-Cv-2AA" firstAttribute="leading" secondItem="C7n-lA-Vj6" secondAttribute="leading" constant="20" id="H8p-57-F23"/>
+                            <constraint firstItem="Aeh-Cv-2AA" firstAttribute="top" secondItem="MxS-3y-f7j" secondAttribute="bottom" id="HUc-t7-uK0"/>
+                            <constraint firstItem="C7n-lA-Vj6" firstAttribute="trailing" secondItem="Aeh-Cv-2AA" secondAttribute="trailing" constant="20" id="KTN-hz-Rrw"/>
+                            <constraint firstItem="6rQ-EO-8On" firstAttribute="leading" secondItem="C7n-lA-Vj6" secondAttribute="leading" id="KdM-04-84G"/>
+                            <constraint firstItem="6rQ-EO-8On" firstAttribute="bottom" secondItem="C7n-lA-Vj6" secondAttribute="bottom" id="Lb2-Ry-nsd"/>
+                            <constraint firstItem="MxS-3y-f7j" firstAttribute="leading" secondItem="C7n-lA-Vj6" secondAttribute="leading" id="MjZ-RF-qoJ"/>
+                            <constraint firstItem="MxS-3y-f7j" firstAttribute="trailing" secondItem="C7n-lA-Vj6" secondAttribute="trailing" id="k3P-sk-1UW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ijn-cS-tkh"/>
+                    <navigationItem key="navigationItem" title="CitySpire" id="Ijn-cS-tkh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPF-Lh-hwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676.8115942028987" y="-505.58035714285711"/>
+            <point key="canvasLocation" x="1642.0289855072465" y="-506.25"/>
         </scene>
         <!--Profile Tab Bar View Controller-->
         <scene sceneID="IUW-ly-e69">
@@ -346,10 +454,10 @@
         <scene sceneID="b8o-6H-6PJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YW6-mW-Dmd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cities" image="building" catalog="system" selectedImage="building" id="izk-00-kyD" userLabel="Cities"/>
+                    <tabBarItem key="tabBarItem" title="Cities" image="building.2" catalog="system" selectedImage="building.2" id="izk-00-kyD" userLabel="Cities"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ory-wv-AwJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Ory-wv-AwJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -366,7 +474,7 @@
         <segue reference="MC6-Ip-2LV"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="building" catalog="system" width="112" height="128"/>
+        <image name="building.2" catalog="system" width="128" height="106"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.2.square.stack" catalog="system" width="113" height="128"/>

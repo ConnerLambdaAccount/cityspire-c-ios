@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7e-hx-kDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="996"/>
+            <point key="canvasLocation" x="-655" y="929"/>
         </scene>
         <!--Location Search Table View Controller-->
         <scene sceneID="y9L-qg-paO">
@@ -135,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISw-rX-71k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="996"/>
+            <point key="canvasLocation" x="58" y="929"/>
         </scene>
         <!--Me-->
         <scene sceneID="vJW-fU-OnN">
@@ -152,7 +152,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCL-EH-VIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1971.0144927536232" y="928.79464285714278"/>
+            <point key="canvasLocation" x="1062" y="929"/>
         </scene>
         <!--Profile Detail View Controller-->
         <scene sceneID="BCJ-ov-d7q">
@@ -265,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIr-97-2Ze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879.7101449275365" y="929.46428571428567"/>
+            <point key="canvasLocation" x="1971" y="929"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="DGb-Lw-uTB">
@@ -286,6 +286,22 @@
             </objects>
             <point key="canvasLocation" x="1060.8695652173915" y="193.52678571428569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Jvy-zq-npO">
+            <objects>
+                <viewController id="aBR-Hl-bbE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GZg-z2-F0g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="C7n-lA-Vj6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ijn-cS-tkh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPF-Lh-hwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676.8115942028987" y="-505.58035714285711"/>
+        </scene>
         <!--Profile Tab Bar View Controller-->
         <scene sceneID="IUW-ly-e69">
             <objects>
@@ -300,6 +316,7 @@
                         <segue destination="SGD-kQ-BcW" kind="relationship" relationship="viewControllers" id="i75-rn-tmx"/>
                         <segue destination="Qtu-zv-a3B" kind="relationship" relationship="viewControllers" id="kJS-du-8Ie"/>
                         <segue destination="Zj7-BU-gT7" kind="relationship" relationship="viewControllers" id="uDW-Go-TDT"/>
+                        <segue destination="YW6-mW-Dmd" kind="relationship" relationship="viewControllers" id="gR3-pC-9ex"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHh-fq-ggi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -323,13 +340,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwL-tY-Ats" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.2608695652174" y="995.75892857142856"/>
+            <point key="canvasLocation" x="-1432" y="929"/>
+        </scene>
+        <!--Cities-->
+        <scene sceneID="b8o-6H-6PJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YW6-mW-Dmd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cities" image="building" catalog="system" selectedImage="building" id="izk-00-kyD" userLabel="Cities"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ory-wv-AwJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aBR-Hl-bbE" kind="relationship" relationship="rootViewController" id="6u8-u9-Ph1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jaY-a3-NS4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="-506"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MC6-Ip-2LV"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="building" catalog="system" width="112" height="128"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.2.square.stack" catalog="system" width="113" height="128"/>

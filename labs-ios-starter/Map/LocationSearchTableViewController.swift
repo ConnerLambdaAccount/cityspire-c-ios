@@ -53,7 +53,6 @@ class LocationSearchTableViewController: UITableViewController {
             guard let response = response else { return }
             self.handleMapSearchDelegate?.dropPinZoomIn(placemark: response.mapItems[0].placemark)
         }
-        
         dismiss(animated: true, completion: nil)
     }
 

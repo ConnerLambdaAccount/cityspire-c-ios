@@ -18,11 +18,14 @@ class CitiesViewController: UIViewController {
 
 extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath) as! CityCollectionViewCell
+        cell.cityStateLabel.text = "Chicago, IL"
+        cell.populationLabel.text = "Population: 2.7M"
+        cell.cityImageView.image = UIImage(systemName: "building.2.fill")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 6
     }
 }

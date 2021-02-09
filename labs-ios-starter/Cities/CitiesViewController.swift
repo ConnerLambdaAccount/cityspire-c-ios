@@ -21,7 +21,9 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath) as! CityCollectionViewCell
         cell.cityStateLabel.text = "Chicago, IL"
         cell.populationLabel.text = "Population: 2.7M"
-        cell.cityImageView.image = UIImage(systemName: "building.2.fill")
+        cell.cityImageView.image = UIImage(named: "chicago")
+        cell.cityImageView.contentMode = .scaleToFill
+        cell.cityImageView.layer.cornerRadius = 15
         return cell
     }
     

@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="671.01449275362324" y="83.705357142857139"/>
         </scene>
-        <!--ProfileViewer-->
+        <!--Login View Controller-->
         <scene sceneID="6M8-Hn-aJP">
             <objects>
                 <viewController id="4a7-cC-Xlp" customClass="LoginViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,13 +35,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="149" y="486" width="116" height="30"/>
-                                <state key="normal" title="Sign in with Okta"/>
-                                <connections>
-                                    <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqC-Sv-mkb">
                                 <rect key="frame" x="164" y="832" width="87" height="30"/>
                                 <state key="normal" title="Bypass Okta"/>
@@ -50,18 +43,81 @@
                                     <segue destination="aOC-qF-9qB" kind="presentation" modalPresentationStyle="fullScreen" id="g7I-6i-Inq"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="I63-ah-T43">
+                                <rect key="frame" x="119" y="140" width="176.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-rQ-aUp">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6v-vN-Ith">
+                                        <rect key="frame" x="74" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-XN-5Dh">
+                                        <rect key="frame" x="135" y="0.0" width="41.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-Fo-voT">
+                                <rect key="frame" x="127" y="213" width="160" height="159"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="CM4-gr-Yln"/>
+                                    <constraint firstAttribute="height" constant="160" id="Qd3-pS-0Mn"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dbz-vn-oei">
+                                <rect key="frame" x="124" y="409" width="166" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-ii-8Re">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="34"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I98-F9-e1R">
+                                        <rect key="frame" x="0.0" y="42" width="166" height="34"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
+                                <rect key="frame" x="124" y="516" width="166" height="32"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerXWithinMargins" id="5R1-zz-EZZ"/>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="INU-fS-Snd" secondAttribute="centerYWithinMargins" id="ADM-g9-0Ut"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="CQk-Xf-had" secondAttribute="trailing" constant="124" id="0DS-p1-rTf"/>
+                            <constraint firstItem="9gJ-Fo-voT" firstAttribute="top" secondItem="I63-ah-T43" secondAttribute="bottom" constant="41.5" id="6Tj-Cr-2Q4"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="124" id="7JQ-6v-dtH"/>
                             <constraint firstItem="HqC-Sv-mkb" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="164" id="G3b-5F-Baw"/>
+                            <constraint firstItem="Dbz-vn-oei" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="124" id="Irb-E5-Vp7"/>
+                            <constraint firstItem="I63-ah-T43" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerX" id="Jpb-eq-ypq"/>
+                            <constraint firstItem="I63-ah-T43" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" id="NXB-H5-FxT"/>
                             <constraint firstItem="HqC-Sv-mkb" firstAttribute="bottom" secondItem="R8l-LV-vJe" secondAttribute="bottom" id="QGh-SD-mGx"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="Dbz-vn-oei" secondAttribute="trailing" constant="124" id="VBA-8g-mzE"/>
+                            <constraint firstItem="Dbz-vn-oei" firstAttribute="top" secondItem="9gJ-Fo-voT" secondAttribute="bottom" constant="36.5" id="ege-CY-tBD"/>
+                            <constraint firstItem="9gJ-Fo-voT" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerX" id="epr-EE-MHW"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="top" secondItem="Dbz-vn-oei" secondAttribute="bottom" constant="31" id="oI9-rE-X1d"/>
                             <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="HqC-Sv-mkb" secondAttribute="trailing" constant="163" id="qfw-Lb-KZS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ProfileViewer" id="fm5-ES-PwH"/>
+                    <navigationItem key="navigationItem" id="fm5-ES-PwH"/>
                     <connections>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
@@ -69,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="84"/>
+            <point key="canvasLocation" x="1544.9275362318842" y="83.705357142857139"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="3Na-TO-5aB">
@@ -167,8 +223,15 @@
         <segue reference="g7I-6i-Inq"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

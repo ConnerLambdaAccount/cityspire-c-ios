@@ -17,7 +17,7 @@ protocol HandleMapSearch {
 class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
-    
+      
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
     

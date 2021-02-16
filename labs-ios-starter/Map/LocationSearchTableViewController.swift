@@ -23,7 +23,6 @@ class LocationSearchTableViewController: UITableViewController {
         fetchAllCities(completion: { (results) in
             self.cities = results
             self.citySearchResults = results
-            print(results)
         })
     }
 

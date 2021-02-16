@@ -37,7 +37,6 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let city: String = citySearchResults[indexPath.row]
 
         cell.cityStateLabel.text = city
-        cell.populationLabel.text = "Population: 2.7M"
         cell.cityImageView.image = UIImage(named: "chicago")
         cell.cityImageView.contentMode = .scaleToFill
         cell.cityImageView.layer.cornerRadius = 15
@@ -46,6 +45,15 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return citySearchResults.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        fetchSingleCity(cityName: citySearchResults[indexPath.row], completion: { (city) in
+            if let city = city {
+                print(city)
+            }
+        })
     }
 }
 

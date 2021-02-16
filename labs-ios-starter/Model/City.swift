@@ -9,9 +9,9 @@
 import Foundation
 
 struct City: Decodable {
-    var city_name: String
-    var population: Int
-    var rent_per_month: Int
-    var walk_score: Int
-    var livability_score: Int
+    var city_name: String = ""
+    var population: Int = -1
+    var rent_per_month: Int = -1
+    var walk_score: Int = -1
+    var livability_score: Int = -1
 }

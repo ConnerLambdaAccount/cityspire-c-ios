@@ -20,7 +20,11 @@ class LocationSearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cities = parseCities()
+        fetchAllCities(completion: { (results) in
+            self.cities = results
+            self.citySearchResults = results
+            print(results)
+        })
     }
 
     // MARK: - Table view data source
@@ -32,9 +36,7 @@ class LocationSearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let city: String = citySearchResults[indexPath.row]
-        let cityName: String = String(city.dropLast(3))
-        let state: String = String(city.dropFirst(city.count-2))
-        cell.textLabel?.text = "\(cityName), \(state)"
+        cell.textLabel?.text = city
         return cell 
     }
     

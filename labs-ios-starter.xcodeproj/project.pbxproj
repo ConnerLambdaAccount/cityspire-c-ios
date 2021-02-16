@@ -27,6 +27,7 @@
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		7F06742F25D2195000CEEF11 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06742E25D2195000CEEF11 /* CitiesViewController.swift */; };
 		7F06743325D21E6800CEEF11 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */; };
+		7F76155E25DB4AB300D25459 /* DSAPIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76155D25DB4AB300D25459 /* DSAPIHelpers.swift */; };
 		C92C64CB25BFBB1000300976 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C64CA25BFBB1000300976 /* PresentationController.swift */; };
 		C92C64CF25BFBB6400300976 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92C64CE25BFBB6400300976 /* OverlayView.xib */; };
 		C92C64D225BFBCCF00300976 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C64D125BFBCCF00300976 /* OverlayView.swift */; };
@@ -55,6 +56,7 @@
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		7F06742E25D2195000CEEF11 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F76155D25DB4AB300D25459 /* DSAPIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAPIHelpers.swift; sourceTree = "<group>"; };
 		C92C64CA25BFBB1000300976 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		C92C64CE25BFBB6400300976 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		C92C64D125BFBCCF00300976 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
 				46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */,
+				7F76155D25DB4AB300D25459 /* DSAPIHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1E5CA225B936B600CE1A78 /* LocationSearchTableViewController.swift in Sources */,
+				7F76155E25DB4AB300D25459 /* DSAPIHelpers.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,

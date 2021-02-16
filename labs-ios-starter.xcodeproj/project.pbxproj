@@ -27,8 +27,6 @@
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		7F06742F25D2195000CEEF11 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06742E25D2195000CEEF11 /* CitiesViewController.swift */; };
 		7F06743325D21E6800CEEF11 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */; };
-		7F8DAE8A25BD7229004E04EE /* ParseCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DAE8925BD7229004E04EE /* ParseCities.swift */; };
-		7FCA8DB825BF94BB007D3C05 /* cities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7FCA8DB725BF94BB007D3C05 /* cities.csv */; };
 		C92C64CB25BFBB1000300976 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C64CA25BFBB1000300976 /* PresentationController.swift */; };
 		C92C64CF25BFBB6400300976 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92C64CE25BFBB6400300976 /* OverlayView.xib */; };
 		C92C64D225BFBCCF00300976 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C64D125BFBCCF00300976 /* OverlayView.swift */; };
@@ -57,8 +55,6 @@
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		7F06742E25D2195000CEEF11 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
-		7F8DAE8925BD7229004E04EE /* ParseCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseCities.swift; sourceTree = "<group>"; };
-		7FCA8DB725BF94BB007D3C05 /* cities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities.csv; sourceTree = "<group>"; };
 		C92C64CA25BFBB1000300976 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		C92C64CE25BFBB6400300976 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		C92C64D125BFBCCF00300976 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -134,10 +130,8 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7FCA8DB725BF94BB007D3C05 /* cities.csv */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
 				46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */,
-				7F8DAE8925BD7229004E04EE /* ParseCities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -264,7 +258,6 @@
 				466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */,
 				466C427D249A8749007D033E /* Assets.xcassets in Resources */,
 				C92C64CF25BFBB6400300976 /* OverlayView.xib in Resources */,
-				7FCA8DB825BF94BB007D3C05 /* cities.csv in Resources */,
 				46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */,
 				466C427B249A8748007D033E /* Main.storyboard in Resources */,
 			);
@@ -279,7 +272,6 @@
 			files = (
 				3A1E5CA225B936B600CE1A78 /* LocationSearchTableViewController.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
-				7F8DAE8A25BD7229004E04EE /* ParseCities.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,

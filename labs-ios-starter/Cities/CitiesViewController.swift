@@ -19,8 +19,13 @@ class CitiesViewController: UIViewController {
         super.viewDidLoad()
         citiesCollectionView.dataSource = self
         citiesCollectionView.delegate = self
-        cities = parseCities()
-        citySearchResults = cities
+        fetchAllCities(completion: { (results) in
+            self.cities = results
+            self.citySearchResults = results
+            DispatchQueue.main.async {
+                self.citiesCollectionView.reloadData()
+            }
+        })
         searchBar.delegate = self
     }
 }
@@ -30,10 +35,8 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath) as! CityCollectionViewCell
         
         let city: String = citySearchResults[indexPath.row]
-        let cityName: String = String(city.dropLast(3))
-        let state: String = String(city.dropFirst(city.count-2))
 
-        cell.cityStateLabel.text = "\(cityName), \(state)"
+        cell.cityStateLabel.text = city
         cell.populationLabel.text = "Population: 2.7M"
         cell.cityImageView.image = UIImage(named: "chicago")
         cell.cityImageView.contentMode = .scaleToFill

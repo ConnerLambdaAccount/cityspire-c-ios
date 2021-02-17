@@ -51,7 +51,7 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
         fetchSingleCity(cityName: citySearchResults[indexPath.row], completion: { (city) in
             if let city = city {
-                print(city)
+                // segue into detailview with city
             }
         })
     }

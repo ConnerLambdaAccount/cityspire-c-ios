@@ -27,6 +27,7 @@
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		7F06742F25D2195000CEEF11 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06742E25D2195000CEEF11 /* CitiesViewController.swift */; };
 		7F06743325D21E6800CEEF11 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */; };
+		7F3288AB25DCB814008D9321 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3288AA25DCB814008D9321 /* CityDetailViewController.swift */; };
 		7F76155E25DB4AB300D25459 /* DSAPIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76155D25DB4AB300D25459 /* DSAPIHelpers.swift */; };
 		7F76156125DB6E1400D25459 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76156025DB6E1400D25459 /* City.swift */; };
 		C92C64CB25BFBB1000300976 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C64CA25BFBB1000300976 /* PresentationController.swift */; };
@@ -57,6 +58,7 @@
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		7F06742E25D2195000CEEF11 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F3288AA25DCB814008D9321 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		7F76155D25DB4AB300D25459 /* DSAPIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAPIHelpers.swift; sourceTree = "<group>"; };
 		7F76156025DB6E1400D25459 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C92C64CA25BFBB1000300976 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				7F06742E25D2195000CEEF11 /* CitiesViewController.swift */,
 				7F06743225D21E6800CEEF11 /* CityCollectionViewCell.swift */,
+				7F3288AA25DCB814008D9321 /* CityDetailViewController.swift */,
 			);
 			path = Cities;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				7F76155E25DB4AB300D25459 /* DSAPIHelpers.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
+				7F3288AB25DCB814008D9321 /* CityDetailViewController.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				46BEB4E924C98DAF00FE0CD1 /* ProfileListViewController.swift in Sources */,

@@ -353,6 +353,7 @@
                                         <connections>
                                             <outlet property="cityImageView" destination="Ajb-wU-N85" id="jay-bg-i9T"/>
                                             <outlet property="cityStateLabel" destination="Q3n-NC-Xho" id="iou-cy-kEQ"/>
+                                            <segue destination="bMP-c8-zPO" kind="show" id="RTq-Fc-gQ0"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dai-uJ-z2F">
@@ -402,6 +403,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPF-Lh-hwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1666.6666666666667" y="-506.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oIF-F3-spb">
+            <objects>
+                <viewController id="bMP-c8-zPO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yvg-xX-KEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ynM-99-NMm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="00s-14-lC1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nzu-UQ-RJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397" y="-506"/>
         </scene>
         <!--Profile Tab Bar View Controller-->
         <scene sceneID="IUW-ly-e69">

@@ -57,7 +57,6 @@ func fetchAllCities(completion: @escaping ([String]) -> () ) {
 
 // cityName here implies text like: "Orlando, Florida"
 func fetchSingleCity(cityName: String, completion: @escaping (City?) -> () ) {
-    print(cityName)
     let jsonBody = try? JSONSerialization.data(withJSONObject: ["location": cityName])
     
     let baseURL: URL = URL(string: "http://cityspire-c-ds.eba-p3pw36sj.us-east-1.elasticbeanstalk.com/location/data")!

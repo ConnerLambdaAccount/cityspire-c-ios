@@ -9,22 +9,24 @@
 import UIKit
 
 class CityDetailViewController: UIViewController {
-
+    // MARK: -- IBOutlets
+    @IBOutlet weak var populationLabel: UILabel!
+    @IBOutlet weak var rentLabel: UILabel!
+    @IBOutlet weak var walkScoreLabel: UILabel!
+    @IBOutlet weak var livabilityScoreLabel: UILabel!
+    
+    
+    // MARK: -- Properties
+    var city: City? = nil
+    
+    // MARK: -- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let city = city else { return }
+        navigationItem.title = city.city_name
+        populationLabel.text = "Population: \(city.population)"
+        rentLabel.text = "Monthly Rent: $\(city.rent_per_month)"
+        walkScoreLabel.text = "Walk Score: \(city.walk_score)"
+        livabilityScoreLabel.text = "Livability Score: \(city.livability_score)"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

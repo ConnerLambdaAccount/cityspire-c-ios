@@ -11,5 +11,4 @@ import UIKit
 class CityCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityStateLabel: UILabel!
-    @IBOutlet weak var populationLabel: UILabel!
 }

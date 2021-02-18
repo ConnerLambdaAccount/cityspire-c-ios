@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-func loadImage(urlString: String, completion: @escaping (UIImage?) -> () ) {
-    let imageURL: URL = URL(string: urlString)!
-    let request: URLRequest = URLRequest(url: imageURL)
+func loadImage(urlRequest: URLRequest, completion: @escaping (UIImage?) -> () ) {
     
-    URLSession.shared.dataTask(with: request) { (data, response, error) in
+    URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
         if error != nil {
             NSLog("loadImage(): error: \(error!)")
             completion(nil)
@@ -79,11 +77,11 @@ func getImageURLRequestForCity(cityName: String, completion: @escaping (URLReque
                         
                         components.queryItems = [URLQueryItem(name: "key", value: "AIzaSyAF_RSxBaOS7dq62VJJO2p-bX718q3P2lM"),
                                                     URLQueryItem(name: "photoreference", value: photoReference),
-                                                    URLQueryItem(name: "maxwidth", value: "800"),
-                                                    URLQueryItem(name: "maxheight", value: "800")
+                                                    URLQueryItem(name: "maxwidth", value: "1200"),
+                                                    URLQueryItem(name: "maxheight", value: "1200")
                                   ]
                         
-                        imageURLRequest = URLRequest(url: urlComponents.url!)
+                        imageURLRequest = URLRequest(url: components.url!)
                         imageURLRequest!.httpMethod = "GET"
                     }
                     

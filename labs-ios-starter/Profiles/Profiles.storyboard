@@ -413,7 +413,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="WQo-je-Cqj">
-                                <rect key="frame" x="0.0" y="181" width="414" height="272"/>
+                                <rect key="frame" x="8" y="181" width="398" height="272"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="272" id="c73-dN-kXs"/>
                                 </constraints>
@@ -445,20 +445,21 @@
                         <viewLayoutGuide key="safeArea" id="ynM-99-NMm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WQo-je-Cqj" secondAttribute="trailing" constant="8" id="3qw-iJ-b0w"/>
                             <constraint firstItem="wfJ-Vs-c3R" firstAttribute="leading" secondItem="ynM-99-NMm" secondAttribute="leading" constant="24" id="9mw-WJ-DZZ"/>
                             <constraint firstItem="2Rp-pA-hvU" firstAttribute="top" secondItem="ynM-99-NMm" secondAttribute="top" id="C50-Tf-h9a"/>
-                            <constraint firstItem="WQo-je-Cqj" firstAttribute="leading" secondItem="ynM-99-NMm" secondAttribute="leading" id="OaK-XA-Y9E"/>
                             <constraint firstItem="wfJ-Vs-c3R" firstAttribute="top" secondItem="g7a-bu-tDi" secondAttribute="bottom" constant="6" id="QPD-B4-4Dm"/>
                             <constraint firstItem="WQo-je-Cqj" firstAttribute="top" secondItem="2Rp-pA-hvU" secondAttribute="bottom" constant="15" id="QzC-vl-rgL"/>
                             <constraint firstItem="g7a-bu-tDi" firstAttribute="top" secondItem="WQo-je-Cqj" secondAttribute="bottom" constant="15" id="RDC-JZ-Jlv"/>
-                            <constraint firstItem="WQo-je-Cqj" firstAttribute="trailing" secondItem="ynM-99-NMm" secondAttribute="trailing" id="Rf3-PA-sqa"/>
                             <constraint firstItem="g7a-bu-tDi" firstAttribute="leading" secondItem="ynM-99-NMm" secondAttribute="leading" constant="20" id="VcC-a9-Efe"/>
+                            <constraint firstItem="WQo-je-Cqj" firstAttribute="leading" secondItem="ynM-99-NMm" secondAttribute="leading" constant="8" id="Z8f-f1-CwG"/>
                             <constraint firstItem="ynM-99-NMm" firstAttribute="trailing" secondItem="2Rp-pA-hvU" secondAttribute="trailing" constant="20" id="b7D-Ai-i5C"/>
                             <constraint firstItem="2Rp-pA-hvU" firstAttribute="leading" secondItem="ynM-99-NMm" secondAttribute="leading" constant="24" id="sEi-b3-Way"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chicago, Illinois" id="00s-14-lC1"/>
                     <connections>
+                        <outlet property="image" destination="WQo-je-Cqj" id="Gcp-ll-bMG"/>
                         <outlet property="livabilityScoreLabel" destination="bl9-5O-aWS" id="tJe-gi-jAj"/>
                         <outlet property="populationLabel" destination="2Rp-pA-hvU" id="KIA-20-WJh"/>
                         <outlet property="rentLabel" destination="aCg-W0-jlx" id="7Hg-Ug-DHd"/>

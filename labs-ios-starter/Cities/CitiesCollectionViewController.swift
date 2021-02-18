@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CitiesViewController: UIViewController {
+class CitiesCollectionViewController: UIViewController {
     // MARK: -- IBOutlets
     @IBOutlet var citiesCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -36,7 +36,7 @@ class CitiesViewController: UIViewController {
     }
 }
 
-extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CitiesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: -- CellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath) as! CityCollectionViewCell
@@ -44,9 +44,18 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let city: String = citySearchResults[indexPath.row]
 
         cell.cityStateLabel.text = city
-        cell.cityImageView.image = UIImage(named: "chicago")
         cell.cityImageView.contentMode = .scaleToFill
         cell.cityImageView.layer.cornerRadius = 15
+        
+        getImageURLRequestForCity(cityName: city, completion: { (urlRequest) in
+            guard let urlRequest = urlRequest else { return }
+            loadImage(urlRequest: urlRequest, completion: { (image) in
+                guard let image = image else { return }
+                DispatchQueue.main.async {
+                    cell.cityImageView.image = image
+                }
+            })
+        })
         
         return cell
     }
@@ -70,7 +79,7 @@ extension CitiesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
 }
 
-extension CitiesViewController: UISearchBarDelegate {
+extension CitiesCollectionViewController: UISearchBarDelegate {
     // Mark: -- TextDidChange
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let filteredCities = cities.filter { (city) -> Bool in
@@ -81,7 +90,7 @@ extension CitiesViewController: UISearchBarDelegate {
     }
 }
 
-extension CitiesViewController {
+extension CitiesCollectionViewController {
     // MARK: -- prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CityDetailSegue" {
